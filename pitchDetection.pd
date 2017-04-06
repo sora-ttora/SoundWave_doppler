@@ -1,26 +1,40 @@
-#N canvas 1173 297 458 573 10;
-#X obj 10 -79 adc~;
+#N canvas 706 87 458 573 10;
+#X obj 9 -103 adc~;
 #X obj 10 84 *~;
 #X obj 10 116 fiddle~ 1024 1 20 3;
 #X obj 10 156 int;
 #X floatatom 10 178 5 0 0 0 - - -, f 5;
-#X floatatom 10 241 5 0 0 0 - - -, f 5;
+#X floatatom 10 247 5 0 0 0 - - -, f 5;
 #X obj 10 197 pack 0 100;
 #X obj 10 219 line;
-#X obj 54 -76 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7300 1;
-#X obj 54 60 / 100;
+#X obj 55 -79 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 55 57 / 100;
 #X obj 37 158 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X msg 220 -30 \; pd dsp 1;
-#X msg 287 -31 \; pd dsp 0;
+#X msg 179 -91 \; pd dsp 1;
+#X msg 246 -92 \; pd dsp 0;
+#X obj 154 91 dac~;
+#X obj 153 42 osc~ 18000;
+#X text 243 43 Sound Generator;
+#X text 41 -102 Sound Input;
+#X text 47 310 freequency;
+#X obj 10 275 mtof;
+#X floatatom 10 310 5 0 0 0 - - -, f 5;
+#X text 49 248 MIDI;
+#X text 50 277 MIDI to Frequency;
+#X text 178 -55 ON;
+#X text 246 -54 OFF;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 2 1 10 0;
 #X connect 3 0 4 0;
 #X connect 4 0 6 0;
+#X connect 5 0 18 0;
 #X connect 6 0 7 0;
 #X connect 7 0 5 0;
 #X connect 8 0 9 0;
 #X connect 9 0 1 1;
+#X connect 14 0 13 0;
+#X connect 18 0 19 0;
